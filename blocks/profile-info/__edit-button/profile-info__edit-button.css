@@ -1,0 +1,8 @@
+.profile-info__edit-button {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+    background-color: black;
+    border: 1px solid #FFFFFF;
+    grid-area: profile-info__edit-button;
+}

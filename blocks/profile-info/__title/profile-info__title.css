@@ -1,0 +1,11 @@
+.profile-info__title {
+    max-width: 294px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+    color: #FFFFFF;
+    grid-area: profile-info__title;
+    margin: 0;
+}

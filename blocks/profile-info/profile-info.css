@@ -1,0 +1,11 @@
+.profile-info {
+    width: 336px;
+    display: grid;
+    grid-template-columns: 294px 24px;
+    grid-template-rows: min-content;
+    grid-template-areas: 
+    "profile-info__title profile-info__edit-button"
+    "profile-info__subtitle profile-info__subtitle";
+    gap: 16px 18px;
+    margin: 0 0 0 30px;
+}
