@@ -1,6 +1,19 @@
 .element__like {
-    max-width: 22px;
+    width: 22px;
     min-height: 19px;
+    align-self: center;
     background-image: url(../../../images/like.svg);
-    margin: 0;
+    background-color: #C4C4C4;
+    margin: 0 20px 0 0;
+    border: 0;
+    opacity: 1;
+}
+
+.element__like:hover {
+    opacity: 0.5;
+}
+
+.element__like_active {
+    opacity: 1;
+    background-image: url(../../../images/Union.png);
 }

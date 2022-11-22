@@ -3,6 +3,12 @@
     height: 24px;
     align-self: center;
     background-color: black;
+    background: url(../../../images/Vector.png) center no-repeat;
     border: 1px solid #FFFFFF;
     grid-area: profile-info__edit-button;
+    opacity: 1;
+}
+
+.profile-info__edit-button:hover {
+    opacity: 0.6;
 }

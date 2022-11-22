@@ -1,6 +1,9 @@
 .element {
     max-width: 282px;
-    min-height: 361px;
     background: #C4C4C4;
     border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

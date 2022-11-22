@@ -3,6 +3,12 @@
     height: 50px;
     align-items: flex-end;
     background-color: black;
+    background: url(../../../images/cross.png) center no-repeat;
     border: 2px solid #FFFFFF;
     border-radius: 2px;
+    opacity: 1;
+}
+
+.profile__add-button:hover {
+    opacity: 0.6;
 }
