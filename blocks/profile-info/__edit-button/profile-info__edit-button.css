@@ -6,9 +6,15 @@
     background: url(../../../images/Vector.png) center no-repeat;
     border: 1px solid #FFFFFF;
     grid-area: profile-info__edit-button;
-    opacity: 1;
 }
 
 .profile-info__edit-button:hover {
     opacity: 0.6;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1279px) {
+    .profile-info__edit-button {
+        width: 18px;
+        height: 18px;
+    }
 }

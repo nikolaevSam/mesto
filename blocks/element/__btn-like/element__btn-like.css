@@ -1,0 +1,21 @@
+.element__btn-like {
+    min-width: 22px;
+    min-height: 19px;
+    align-self: center;
+    background-color: #C4C4C4;
+    margin: 0 20px 0 0;
+    border: 0;
+    opacity: 1;
+}
+
+.element__btn-like_inactive {
+    background-image: url(../../../images/like.svg);
+}
+
+.element__btn-like_active {
+    background-image: url(../../../images/Union.png);
+}
+
+.element__btn-like:hover {
+    opacity: 0.5;
+}

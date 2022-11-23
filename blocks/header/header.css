@@ -5,3 +5,23 @@
     padding: 45px 0 40px;
     margin: 0 auto;
 }
+
+@media screen and (min-width: 981px) and (max-width: 1279px){
+    .header {
+        max-width: 581px;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 980px) {
+    .header {
+        max-width: 282px;
+        padding: 28px 0 42px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header {
+        max-width: 100%;
+        padding: 28px 0 42px;
+    }
+}
