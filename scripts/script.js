@@ -11,7 +11,7 @@ for (let i = 0; i < btnLike.length; i++) {
         (btnLike[i].classList.remove('element__btn-like_inactive'), btnLike[i].classList.add('element__btn-like_active')) :
 
         (btnLike[i].classList.add('element__btn-like_inactive'), btnLike[i].classList.remove('element__btn-like_active'))
-        
+
     }
 
     btnLike[i].addEventListener('click', addLike);
@@ -58,3 +58,15 @@ function formSubmitHandler(evt) {
 }
 
 btnSave.addEventListener('click', formSubmitHandler);
+
+
+
+// let addLike = () => {
+
+//     (btnLike[i].classList.contains('element__btn-like_inactive') === true) ?
+
+//     (btnLike[i].classList.remove('element__btn-like_inactive'), btnLike[i].classList.add('element__btn-like_active')) :
+
+//     (btnLike[i].classList.add('element__btn-like_inactive'), btnLike[i].classList.remove('element__btn-like_active'))
+    
+// }
