@@ -6,6 +6,7 @@
     font-size: 42px;
     line-height: 48px;
     color: #FFF;
+    align-self: flex-end;
     grid-area: profile-info__title;
     margin: 0;
 }

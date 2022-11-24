@@ -1,49 +1,60 @@
+// мне нравится / не нравится
+
 let btnLike = document.querySelectorAll('.element__btn-like');
 
 for (let i = 0; i < btnLike.length; i++) {
 
-    function addLike() {
+    let addLike = () => {
 
-        if (btnLike[i].classList.contains('element__btn-like_inactive') === true) {
+        (btnLike[i].classList.contains('element__btn-like_inactive') === true) ?
 
-            btnLike[i].classList.remove('element__btn-like_inactive');
+        (btnLike[i].classList.remove('element__btn-like_inactive'), btnLike[i].classList.add('element__btn-like_active')) :
 
-            btnLike[i].classList.add('element__btn-like_active');
-
-        } else {
-
-            btnLike[i].classList.add('element__btn-like_inactive');
-
-            btnLike[i].classList.remove('element__btn-like_active');
-
-        }
-
+        (btnLike[i].classList.add('element__btn-like_inactive'), btnLike[i].classList.remove('element__btn-like_active'))
+        
     }
 
     btnLike[i].addEventListener('click', addLike);
 
 }
 
-// Находим форму в DOM
-// let formElement = // Воспользуйтесь методом querySelector()
-// Находим поля формы в DOM
-// let nameInput = // Воспользуйтесь инструментом .querySelector()
-// let jobInput = // Воспользуйтесь инструментом .querySelector()
+// открытие / закрытие формы
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-// function formSubmitHandler (evt) {
-//     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                                // Так мы можем определить свою логику отправки.
-                                                // О том, как это делать, расскажем позже.
+let popup = document.querySelector('.popup');
 
-    // Получите значение полей jobInput и nameInput из свойства value
+let btnEdit = document.querySelector('.profile-info__btn-edit');
 
-    // Выберите элементы, куда должны быть вставлены значения полей
+let btnClose = document.querySelector('.form__btn-close');
 
-    // Вставьте новые значения с помощью textContent
-// }
+let btnSave = document.querySelector('.form__btn-save');
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
-// formElement.addEventListener('submit', formSubmitHandler); 
+let openPopup = () => { (btnEdit.matches(':hover') === true) ? popup.classList.add('popup_opened') : false };
+
+let closePopup = () => { ((btnClose.matches(':hover') === true) || (btnSave.matches(':hover') === true)) ? popup.classList.remove('popup_opened') : false };
+
+btnEdit.addEventListener('click', openPopup);
+
+btnClose.addEventListener('click', closePopup);
+
+btnSave.addEventListener('click', closePopup);
+
+// заполнение профиля из формы
+
+let formElement = document.querySelector('.form');
+
+let nameInput = formElement.querySelector('.form__name');
+
+let jobInput = formElement.querySelector('.form__job');
+
+let nameForm = document.querySelector('.profile-info__title');
+
+let jobForm = document.querySelector('.profile-info__subtitle');
+
+function formSubmitHandler(evt) {
+
+    evt.preventDefault();
+
+    ((nameInput.value === '') || (jobInput.value === '')) ? alert('Please enter your name and job!') : (nameForm.textContent = nameInput.value, jobForm.textContent = jobInput.value)
+}
+
+btnSave.addEventListener('click', formSubmitHandler);

@@ -7,7 +7,7 @@
     line-height: 22px;
     color: #FFFFFF;
     grid-area: profile-info__subtitle;
-    margin: 0;
+    margin: 16px 0 0;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1279px) {
@@ -15,6 +15,7 @@
         font-size: 14px;
         line-height: 17px;
         text-align: center;
+        margin: 14px 0 0;
     }
 
 }
