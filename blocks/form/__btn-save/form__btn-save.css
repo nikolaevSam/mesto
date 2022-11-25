@@ -3,11 +3,11 @@
     height: 50px;
     background: #000000;
     border-radius: 2px;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.125rem;
+    line-height: 1.2;
     text-align: center;
     color: #fff;
     padding: 0;
@@ -23,8 +23,8 @@
     .form__btn-save {
         width: calc(100% - 44px);
         height: 46px;
-        font-size: 14px;
-        line-height: 17px;
+        font-size: 0.875rem;
+        line-height: 1.2;
         color: #fff;
         margin: 45px auto 25px;
     }

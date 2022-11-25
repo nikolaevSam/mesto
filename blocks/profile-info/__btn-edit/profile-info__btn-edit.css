@@ -5,10 +5,10 @@
     background-color: #bbff00;
     background: url(../../../images/button__edit.png) center no-repeat;
     border: 1px solid #FFFFFF;
-    grid-area: profile-info__btn-edit;
     padding: 0;
     margin: 0 0 0 18px;
     align-self: flex-end;
+    grid-area: profile-info__btn-edit;
 }
 
 .profile-info__btn-edit:hover {

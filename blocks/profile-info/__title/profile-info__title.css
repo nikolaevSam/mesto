@@ -1,20 +1,20 @@
 .profile-info__title {
     max-width: 100%;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 42px;
-    line-height: 48px;
+    font-size: 2.625rem;
+    line-height: 1.15;
     color: #FFF;
     align-self: flex-end;
-    grid-area: profile-info__title;
     margin: 0;
+    grid-area: profile-info__title;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1279px) {
     .profile-info__title {
-        font-size: 27px;
-        line-height: 33px;
+        font-size: 1.69rem;
+        line-height: 1.2;
         text-align: center;
     }
 }

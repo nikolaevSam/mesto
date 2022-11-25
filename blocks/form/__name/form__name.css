@@ -1,6 +1,6 @@
 .form__name {
     max-width: calc(100% - 72px);
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -14,9 +14,6 @@
 @media screen and (min-width: 320px) and (max-width: 980px) {
     .form__name {
         width: calc(100% - 44px);
-        font-size: 14px;
-        line-height: 17px;
-        color: #000;
         margin: 0 auto 13px;
     }
 }

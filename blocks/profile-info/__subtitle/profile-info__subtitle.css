@@ -1,19 +1,19 @@
 .profile-info__subtitle {
     max-width: 100%;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 1.125rem;
+    line-height: 1.2;
     color: #FFFFFF;
-    grid-area: profile-info__subtitle;
     margin: 16px 0 0;
+    grid-area: profile-info__subtitle;
 }
 
 @media screen and (min-width: 320px) and (max-width: 1279px) {
     .profile-info__subtitle {
-        font-size: 14px;
-        line-height: 17px;
+        font-size: 0.875rem;
+        line-height: 1.2;
         text-align: center;
         margin: 14px 0 0;
     }
