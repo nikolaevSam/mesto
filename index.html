@@ -12,75 +12,73 @@
 <body class="page">
     <header class="header">
         <img src="./images/header__logo.svg" alt="логотип Mesto Russia" class="header__logo">
-        <div class="header__line"></div>
     </header>
 
     <main>
         <section class="profile">
             <div class="profile-info">
                 <img src="./images/profile-info__avatar.jpg" alt="аватар" class="profile-info__avatar">
-                <h2 class="profile-info__title">Жак-Ив Кусто</h2>
+                <h1 class="profile-info__title">Жак-Ив Кусто</h1>
                 <button class="profile-info__btn-edit" type="button"></button>
                 <p class="profile-info__subtitle">Исследователь океана</p>
             </div>
             <button class="profile__btn-add" type="button"></button>
         </section>
 
-        <section class="popup">
-            <div class="form">
-                <h2 class="form__title">Редактировать профиль</h2>
-                <input type="text" placeholder="Name" class="form__name">
-                <div class="form__line"></div>
-                <input type="text" placeholder="Job" class="form__job">
-                <div class="form__line"></div>
-                <input class="form__btn-save" value="Сохранить" type="submit">
-                <button class="form__btn-close" type="button"></button>
-            </div>
-        </section>
-
         <section class="elements">
             <div class="element">
                 <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Карачаевск" class="element__image">
                 <h2 class="element__text">Карачаевск</h2>
-                <button class="element__btn-like element__btn-like_inactive" type="button"></button>
+                <button class="element__btn-like" type="button"></button>
             </div>
 
             <div class="element">
                 <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
                 <h2 class="element__text">Гора Эльбрус</h2>
-                <button class="element__btn-like element__btn-like_inactive" type="button"></button>
+                <button class="element__btn-like" type="button"></button>
             </div>
 
             <div class="element">
                 <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
                 <h2 class="element__text">Домбай</h2>
-                <button class="element__btn-like element__btn-like_inactive" type="button"></button>
+                <button class="element__btn-like" type="button"></button>
             </div>
 
             <div class="element">
                 <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
                 <h2 class="element__text">Гора Эльбрус</h2>
-                <button class="element__btn-like element__btn-like_inactive" type="button"></button>
+                <button class="element__btn-like" type="button"></button>
             </div>
 
             <div class="element">
                 <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
                 <h2 class="element__text">Домбай</h2>
-                <button class="element__btn-like element__btn-like_inactive" type="button"></button>
+                <button class="element__btn-like" type="button"></button>
             </div>
 
             <div class="element">
                 <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Карачаево-Черкесская республика"
                     class="element__image">
                 <h2 class="element__text">Карачаево-Черкесская республика</h2>
-                <button class="element__btn-like element__btn-like_inactive" type="button"></button>
+                <button class="element__btn-like" type="button"></button>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <h3 class="footer__copyright">&copy; 2022 Mesto Russia</h3>
-    </footer>
+        <div class="footer__copyright">&copy; 2022 Mesto Russia</div>
+    </footer> 
+
+    <div class="popup">
+        <div class="form">
+            <h2 class="form__title">Редактировать профиль</h2>
+            <input type="text" placeholder="Name" class="form__name">
+            <input type="text" placeholder="Job" class="form__job">
+            <input class="form__btn-save" value="Сохранить" type="submit">
+            <button class="form__btn-close" type="button"></button>
+        </div>
+    </div>
+
     <script src="./scripts/script.js"></script>
 </body>
 
