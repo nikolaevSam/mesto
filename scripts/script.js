@@ -55,6 +55,6 @@ function formSubmitHandler(evt) {
     ((nameInput.value === '') || (jobInput.value === '')) ? alert('Please enter your name and job!') : (nameForm.textContent = nameInput.value, jobForm.textContent = jobInput.value)
 }
 
-btnSave.addEventListener('click', formSubmitHandler);
+btnSave.addEventListener('submit', formSubmitHandler);
 
 document.addEventListener( 'keyup', formSubmitHandler);
