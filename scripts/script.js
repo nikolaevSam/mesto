@@ -1,52 +1,29 @@
-// мне нравится / не нравится
+const popup = document.querySelector('.popup');
 
-let btnLike = document.querySelectorAll('.element__btn-like');
+const buttonEdit = document.querySelector('.profile-info__edit');
 
-for (let i = 0; i < btnLike.length; i++) {
+const buttonSave = document.querySelector('.form__save');
 
-    let addLike = () => { (btnLike[i].matches(':hover') === false) ? btnLike[i].classList.toggle('element__btn-like_active') : btnLike[i].classList.toggle('element__btn-like_active') }
+const buttonClose = popup.querySelector('.popup__close');
 
-    btnLike[i].addEventListener('click', addLike);
-
-}
-
-// открытие / закрытие формы
-
-let popup = document.querySelector('.popup');
-
-let btnEdit = document.querySelector('.profile-info__btn-edit');
-
-let btnClose = document.querySelector('.form__btn-close');
-
-let btnSave = document.querySelector('.form__btn-save');
-
-let openPopup = () => { (btnEdit.matches(':hover') === true) ? popup.classList.add('popup_opened') : false };
-
-let closePopup = (evt) => { ((btnClose.matches(':hover') === true) || (btnSave.matches(':hover') === true) || ((evt.code === 'Enter'))) ? popup.classList.remove('popup_opened') : false };
-
-btnEdit.addEventListener('click', openPopup);
-
-btnClose.addEventListener('click', closePopup);
-
-btnSave.addEventListener('click', closePopup);
-
-document.addEventListener( 'keyup', closePopup);
-
-// заполнение профиля из формы
-
-let formElement = document.querySelector('.form');
-
-let nameInput = formElement.querySelector('.form__name');
-
-let jobInput = formElement.querySelector('.form__job');
+const formElement = document.querySelector('.form');
 
 let nameForm = document.querySelector('.profile-info__title');
 
 let jobForm = document.querySelector('.profile-info__subtitle');
 
+let nameInput = formElement.querySelector('.form__name');
+
+let jobInput = formElement.querySelector('.form__job');
+
 nameInput.value = nameForm.textContent;
 
 jobInput.value = jobForm.textContent;
+
+
+let openPopup = () => { (buttonEdit.matches(':hover') === true) ? popup.classList.add('popup_opened') : false };
+
+let closePopup = (event) => { ((buttonClose.matches(':hover') === true) || (buttonSave.matches(':hover') === true)) ? popup.classList.remove('popup_opened') : false };
 
 function formSubmitHandler(evt) {
 
@@ -55,6 +32,10 @@ function formSubmitHandler(evt) {
     ((nameInput.value === '') || (jobInput.value === '')) ? alert('Please enter your name and job!') : (nameForm.textContent = nameInput.value, jobForm.textContent = jobInput.value)
 }
 
-btnSave.addEventListener('submit', formSubmitHandler);
+buttonSave.addEventListener('click', formSubmitHandler);
 
-document.addEventListener( 'keyup', formSubmitHandler);
+buttonEdit.addEventListener('click', openPopup);
+
+buttonClose.addEventListener('click', closePopup);
+
+buttonSave.addEventListener('click', closePopup);
