@@ -8,7 +8,7 @@
   margin: 0;
   border: 0;
   position: absolute;
-  top: calc((100%/2) - 212px);
+  top: calc((100%/2) - 228px);
   left: calc((100%/2) + 223px);
 }
 
@@ -21,7 +21,7 @@
   .popup__close {
     width: 20px;
     height: 20px;
-    top: calc((100%/2) - 201px);
+    top: calc((100%/2) - 221px);
     left: calc((100%/2) + 121px);
   }
 }

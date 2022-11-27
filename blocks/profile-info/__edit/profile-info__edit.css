@@ -5,7 +5,7 @@
   background: url(../../../images/button__edit.png) center no-repeat;
   border: 1px solid #FFFFFF;
   padding: 0;
-  margin: 0 0 14px 24px;
+  margin: 0 0 15px 20px;
   grid-area: profile-info__btn-edit;
 }
 
