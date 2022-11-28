@@ -8,7 +8,6 @@ let nameProfile = document.querySelector('.profile-info__title');
 let jobProfile = document.querySelector('.profile-info__subtitle');
 const popupContainer = popup.querySelector('.popup__container');
 let elementContainer = document.querySelector('.elements');
-let buttonLike = elementContainer.querySelectorAll('.element__like');
 const initialCards = [
   {
     name: 'Архыз',
@@ -49,6 +48,7 @@ function addCards() {
   };
 };
 addCards();
+let buttonLike = elementContainer.querySelectorAll('.element__like');
 
 let openPopup = () => {
   nameInput.value = nameProfile.textContent;
