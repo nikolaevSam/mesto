@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   visibility: hidden;
-  z-index: -1;
   opacity: 0;
   top: 0;
   right: 0;
