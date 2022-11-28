@@ -19,48 +19,48 @@
             <div class="profile-info">
                 <img src="./images/profile-info__avatar.jpg" alt="аватар" class="profile-info__avatar">
                 <h1 class="profile-info__title">Жак-Ив Кусто</h1>
-                <button class="profile-info__edit" type="button"></button>
+                <button class="profile-info__edit" aria-label="редактирование профиля" type="button"></button>
                 <p class="profile-info__subtitle">Исследователь океана</p>
             </div>
-            <button class="profile__add" type="button"></button>
+            <button class="profile__add" aria-label="добавить место" type="button"></button>
         </section>
 
         <section class="elements">
             <article class="element">
                 <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Карачаевск" class="element__image">
                 <h2 class="element__text">Карачаевск</h2>
-                <button class="element__like element__like_active" type="button"></button>
+                <button class="element__like element__like_active" aria-label="мне нравится / не нравится" type="button"></button>
             </article>
 
             <article class="element">
                 <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
                 <h2 class="element__text">Гора Эльбрус</h2>
-                <button class="element__like" type="button"></button>
+                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
             </article>
 
             <article class="element">
                 <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
                 <h2 class="element__text">Домбай</h2>
-                <button class="element__like" type="button"></button>
+                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
             </article>
 
             <article class="element">
                 <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
                 <h2 class="element__text">Гора Эльбрус</h2>
-                <button class="element__like" type="button"></button>
+                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
             </article>
 
             <article class="element">
                 <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
                 <h2 class="element__text">Домбай</h2>
-                <button class="element__like" type="button"></button>
+                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
             </article>
 
             <article class="element">
                 <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Карачаево-Черкесская республика"
                     class="element__image">
                 <h2 class="element__text">Карачаево-Черкесская республика</h2>
-                <button class="element__like" type="button"></button>
+                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
             </article>
         </section>
     </main>
@@ -70,13 +70,13 @@
     </footer>
 
     <div class="popup">
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close" aria-label="закрыть popup" type="button"></button>
         <div class="popup__container">
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="form">
-                <input type="text" placeholder="Name" class="form__input form__input_data_name">
-                <input type="text" placeholder="Job" class="form__input form__input_data_job">
-                <button type="submit" class="form__save">Сохранить</button>
+                <input type="text" placeholder="Name" class="form__input form__input_data_name" required>
+                <input type="text" placeholder="Job" class="form__input form__input_data_job" required>
+                <button type="submit" class="form__submit">Сохранить</button>
             </form>
         </div>
     </div>

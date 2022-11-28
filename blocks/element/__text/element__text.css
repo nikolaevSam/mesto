@@ -11,3 +11,9 @@
   color: #000;
   margin: 25px 0 24px 21px;
 }
+
+@media screen and (min-width: 320px) and (max-width: 980px) {
+  .element__text {
+    margin: 25px 0 25px 21px;
+  }
+}
