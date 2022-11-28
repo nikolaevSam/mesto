@@ -33,9 +33,3 @@ popup.addEventListener('click', function (evt) {
 buttonEdit.addEventListener('click', openPopup);
 buttonClose.addEventListener('click', closePopup);
 formElement.addEventListener('submit', formSubmitHandler);
-
-popup.addEventListener('click', function (evt) {
-  (evt.target === evt.currentTarget) ?
-    closePopup()
-    : false
-});
