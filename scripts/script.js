@@ -9,7 +9,6 @@ let jobInput = formElement.querySelector('.form__input_data_job');
 let nameForm = document.querySelector('.profile-info__title');
 let jobForm = document.querySelector('.profile-info__subtitle');
 
-
 let openPopup = () => {
   nameInput.value = nameForm.textContent;
   jobInput.value = jobForm.textContent;
