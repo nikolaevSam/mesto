@@ -68,15 +68,15 @@ function formSubmitHandler(evt) {
   closePopup();
 };
 
-popup.addEventListener('click', function(event) {
-  if(!event.defaultPrevented) {
-    closePopup();
-  };
-});
+// popup.addEventListener('click', function(event) {
+//   if(!event.defaultPrevented) {
+//     closePopup();
+//   };
+// });
 
-popupContainer.addEventListener('click', function(event) {
-  event.preventDefault();
-});
+// popupContainer.addEventListener('click', function(event) {
+//   event.preventDefault();
+// });
 
 for (let i = 0; i < buttonLike.length; i++) {
   let addLike = () => {
