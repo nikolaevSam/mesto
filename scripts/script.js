@@ -1,12 +1,13 @@
 const popup = document.querySelector('.popup');
-const buttonEdit = document.querySelector('.profile-info__edit');
+const popupContainer = popup.querySelector('.popup__container');
 const buttonClose = popup.querySelector('.popup__close');
+const buttonEdit = document.querySelector('.profile-info__edit');
 const formElement = document.querySelector('.form');
 let nameInput = formElement.querySelector('.form__input_data_name');
 let jobInput = formElement.querySelector('.form__input_data_job');
 let nameProfile = document.querySelector('.profile-info__title');
 let jobProfile = document.querySelector('.profile-info__subtitle');
-const popupContainer = popup.querySelector('.popup__container');
+
 let elementContainer = document.querySelector('.elements');
 const initialCards = [
   {
@@ -67,10 +68,14 @@ function formSubmitHandler(evt) {
   closePopup();
 };
 
-popup.addEventListener('click', function (evt) {
-  (evt.target === evt.currentTarget) ?
-    closePopup()
-    : false
+popup.addEventListener('click', function(event) {
+  if(!event.defaultPrevented) {
+    closePopup();
+  };
+});
+
+popupContainer.addEventListener('click', function(event) {
+  event.preventDefault();
 });
 
 for (let i = 0; i < buttonLike.length; i++) {
@@ -88,9 +93,22 @@ let elements = elementContainer.querySelectorAll('.element');
 let buttonDeletePlace = elementContainer.querySelectorAll('.element__delete');
 for (let i = 0; i < elements.length; i++) {
   let deletePlace = () => {
-    elements[i].classList.remove('element');
+    elements[i].remove();
   };
   buttonDeletePlace[i].addEventListener('click', deletePlace);
 };
 
-console.log({elements})
+// Добавление карточки данный взять из попапа после того как он будет создан
+let buttonAdd = document.querySelector('.profile__add');
+let addCard = () => {
+  elementContainer.insertAdjacentHTML('afterBegin', `
+    <article class="element">
+    <button class="element__delete" aria-label="удалить место" type="button"></button>
+    <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз" class="element__image">
+    <h2 class="element__text">Арsdasdaхыз</h2>
+    <button class="element__like" type="button"></button>
+    </article>
+    `);
+};
+buttonAdd.addEventListener('click', addCard);
+// конец
