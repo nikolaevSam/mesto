@@ -68,6 +68,11 @@ function formSubmitHandler(evt) {
   closePopup();
 };
 
+popup.addEventListener('click', function (event) {
+  event.target === event.currentTarget ?
+    closePopup() : false;
+});
+
 // popup.addEventListener('click', function(event) {
 //   if(!event.defaultPrevented) {
 //     closePopup();
