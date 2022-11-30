@@ -75,19 +75,42 @@
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup">
-        <button class="popup__close" aria-label="закрыть popup" type="button"></button>
-        <div class="popup__container">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form" name="form">
-                <input type="text" placeholder="Name" name="dataname" class="form__input form__input_data_name" required>
-                <input type="text" placeholder="Job" name="datajob" class="form__input form__input_data_job" required>
-                <button type="submit" class="form__submit">Сохранить</button>
-            </form>
-        </div>
+    <div class="popup" id="popup_profile">
+      <button class="popup__close" aria-label="закрыть popup" type="button"></button>
+      <div class="popup__container">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <form class="form" name="form">
+          <input type="text" placeholder="Имя Фамили" name="dataname" class="form__input form__input_data_name" required>
+          <input type="text" placeholder="Работа" name="datajob" class="form__input form__input_data_job" required>
+          <button type="submit" class="form__submit">Сохранить</button>
+        </form>
+      </div>
     </div>
 
-    <!-- Спасибо за комментарии, Антон! И за полезные ссылки. Надеюсь сейчас все поправил:) -->
+    <div class="popup" id="popup_element">
+      <button class="popup__close" aria-label="закрыть popup" type="button"></button>
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <form class="form" name="form">
+          <input type="text" placeholder="Название" name="dataplace" class="form__input form__input_data_place" required>
+          <input type="text" placeholder="Ссылка на картинку" name="dataurl" class="form__input form__input_data_url"
+            required>
+          <button type="submit" class="form__submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- <div class="popup" id="popup-image">
+      <button class="popup__close" aria-label="закрыть popup" type="button"></button>
+      <div class="popup__container">
+        <form class="form" name="form">
+          <input type="text" placeholder="Название" name="dataplace" class="form__input form__input_data_place" required>
+          <input type="text" placeholder="Ссылка на картинку" name="dataurl" class="form__input form__input_data_url"
+            required>
+          <button type="submit" class="form__submit">Создать</button>
+        </form>
+      </div>
+    </div> -->
 
     <script src="./scripts/script.js"></script>
 </body>
