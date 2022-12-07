@@ -1,8 +1,8 @@
 const buttonAdd = document.querySelector('.profile__add');
 const buttonEdit = document.querySelector('.profile-info__edit');
-const buttonClose = document.querySelectorAll('.popup__close');
-const buttonDeletePlace = document.querySelectorAll('.element__delete');
-const buttonLike = document.querySelectorAll('.element__like');
+const buttonsClose = document.querySelectorAll('.popup__close');
+const buttonsDeletePlace = document.querySelectorAll('.element__delete');
+const buttonsLike = document.querySelectorAll('.element__like');
 let popupPlace = document.getElementById('popup_element');
 let popupProfile = document.getElementById('popup_profile');
 let popupImage = document.getElementById('popup_image');
@@ -27,6 +27,18 @@ let addCard = (evt) => {
   element.querySelector('.element__text').textContent = inputPlace.value;
   element.querySelector('.element__image').src = inputUrl.value;
   element.querySelector('.element__image').alt = inputPlace.value;
+  element.querySelector('.element__like').addEventListener('click', () =>
+    addLike(element.querySelector('.element__like'))
+  );
+  element.querySelector('.element__delete').addEventListener('click', () =>
+    deletePlace(element)
+  );
+  element.querySelector('.element__image').addEventListener('click', (evt) => {
+    openPopup(popup_image);
+    elementImage.src = evt.target.src;
+    elementImage.alt = evt.target.alt;
+    elementDescription.textContent = evt.target.alt;
+  });
   elementContainer.prepend(element);
   closePopup();
 };
@@ -48,22 +60,24 @@ let closePopup = () => {
   };
 };
 
-for (let i = 0; i < popupAll.length; i++) {
-  buttonClose[i].addEventListener('click', closePopup);
+let addLike = (clickLike) => {
+  clickLike.classList.toggle('element__like_active');
 };
 
-for (let i = 0; i < buttonLike.length; i++) {
-  let addLike = () => {
-    buttonLike[i].classList.toggle('element__like_active')
-  };
-  buttonLike[i].addEventListener('click', addLike);
+let deletePlace = (deleteElement) => {
+  deleteElement.remove();
+};
+
+for (let i = 0; i < popupAll.length; i++) {
+  buttonsClose[i].addEventListener('click', closePopup);
+};
+
+for (let i = 0; i < buttonsLike.length; i++) {
+  buttonsLike[i].addEventListener('click', () => addLike( buttonsLike[i]));
 };
 
 for (let i = 0; i < elementAll.length; i++) {
-  let deletePlace = () => {
-    elementAll[i].remove();
-  };
-  buttonDeletePlace[i].addEventListener('click', deletePlace);
+  buttonsDeletePlace[i].addEventListener('click', () => deletePlace(elementAll[i]));
 };
 
 for (i = 0; i < imageAll.length; i++) {
