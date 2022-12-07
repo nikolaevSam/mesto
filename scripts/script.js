@@ -14,9 +14,9 @@ let nameInput = formProfile.querySelector('.form__input_data_name');
 let jobInput = formProfile.querySelector('.form__input_data_job');
 let nameProfile = document.querySelector('.profile-info__title');
 let jobProfile = document.querySelector('.profile-info__subtitle');
-let popupAll = document.querySelectorAll('.popup');
-let elementAll = document.querySelectorAll('.element');
-let imageAll = document.querySelectorAll('.element__image');
+let popups = document.querySelectorAll('.popup');
+let elements = document.querySelectorAll('.element');
+let images = document.querySelectorAll('.element__image');
 let elementImage = popupImage.querySelector('.popup__image');
 let elementDescription = popupImage.querySelector('.popup__description')
 
@@ -55,8 +55,8 @@ let openPopup = (popupName) => {
 };
 
 let closePopup = () => {
-  for (let i = 0; i < popupAll.length; i++) {
-    popupAll[i].classList.remove('popup_opened');
+  for (let i = 0; i < popups.length; i++) {
+    popups[i].classList.remove('popup_opened');
   };
 };
 
@@ -68,7 +68,7 @@ let deletePlace = (deleteElement) => {
   deleteElement.remove();
 };
 
-for (let i = 0; i < popupAll.length; i++) {
+for (let i = 0; i < popups.length; i++) {
   buttonsClose[i].addEventListener('click', closePopup);
 };
 
@@ -76,12 +76,12 @@ for (let i = 0; i < buttonsLike.length; i++) {
   buttonsLike[i].addEventListener('click', () => addLike( buttonsLike[i]));
 };
 
-for (let i = 0; i < elementAll.length; i++) {
-  buttonsDeletePlace[i].addEventListener('click', () => deletePlace(elementAll[i]));
+for (let i = 0; i < elements.length; i++) {
+  buttonsDeletePlace[i].addEventListener('click', () => deletePlace(elements[i]));
 };
 
-for (i = 0; i < imageAll.length; i++) {
-  imageAll[i].addEventListener('click', (evt) => {
+for (i = 0; i < images.length; i++) {
+  images[i].addEventListener('click', (evt) => {
     openPopup(popup_image);
     elementImage.src = evt.target.src;
     elementImage.alt = evt.target.alt;
@@ -89,8 +89,8 @@ for (i = 0; i < imageAll.length; i++) {
   });
 }
 
-for (let i = 0; i < popupAll.length; i++) {
-  popupAll[i].addEventListener('click', (event) => {
+for (let i = 0; i < popups.length; i++) {
+  popups[i].addEventListener('click', (event) => {
     event.target === event.currentTarget ?
       closePopup() : false;
   });
