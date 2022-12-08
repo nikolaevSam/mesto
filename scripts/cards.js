@@ -1,4 +1,4 @@
-let elementContainer = document.querySelector('.elements');
+const elementContainer = document.querySelector('.elements');
 const initialCards = [
   {
     name: 'Архыз',

@@ -1,11 +1,11 @@
 const buttonAdd = document.querySelector('.profile__add');
 const buttonEdit = document.querySelector('.profile-info__edit');
-const buttonsClose = document.querySelectorAll('.popup__close');
-const buttonsDeletePlace = document.querySelectorAll('.element__delete');
-const buttonsLike = document.querySelectorAll('.element__like');
-let popupPlace = document.getElementById('popup_element');
-let popupProfile = document.getElementById('popup_profile');
-let popupImage = document.getElementById('popup_image');
+// const buttonsClose = document.querySelectorAll('.popup__close'); // delete
+// const buttonsDeletePlace = document.querySelectorAll('.element__delete');  // delete
+// const buttonsLike = document.querySelectorAll('.element__like'); // delete
+const popupPlace = document.querySelector('.popup_element');
+const popupProfile = document.querySelector('.popup_profile');
+const popupImage = document.querySelector('.popup_zoom');
 let formPlace = popupPlace.querySelector('.form');
 let formProfile = popupProfile.querySelector('.form');
 let inputPlace = popupPlace.querySelector('.form__input_data_place');
@@ -15,11 +15,10 @@ let jobInput = formProfile.querySelector('.form__input_data_job');
 let nameProfile = document.querySelector('.profile-info__title');
 let jobProfile = document.querySelector('.profile-info__subtitle');
 let popups = document.querySelectorAll('.popup');
-let elements = document.querySelectorAll('.element');
-let images = document.querySelectorAll('.element__image');
+// let elements = document.querySelectorAll('.element');  // delete
+let images = document.querySelectorAll('.element__image'); // delete
 let elementImage = popupImage.querySelector('.popup__image');
 let elementDescription = popupImage.querySelector('.popup__description')
-
 let addCard = (evt) => {
   evt.preventDefault(evt);
   const elementTemplate = document.querySelector('#element-template').content;
@@ -28,79 +27,87 @@ let addCard = (evt) => {
   element.querySelector('.element__image').src = inputUrl.value;
   element.querySelector('.element__image').alt = inputPlace.value;
   element.querySelector('.element__like').addEventListener('click', () =>
-    addLike(element.querySelector('.element__like'))
+    handleLikeButton(element.querySelector('.element__like'))
   );
   element.querySelector('.element__delete').addEventListener('click', () =>
-    deletePlace(element)
+  handleDeleteButton(element)
   );
   element.querySelector('.element__image').addEventListener('click', (evt) => {
-    openPopup(popup_image);
+    handleOpenButton(popupImage);
     elementImage.src = evt.target.src;
     elementImage.alt = evt.target.alt;
     elementDescription.textContent = evt.target.alt;
   });
   elementContainer.prepend(element);
-  closePopup();
+  handleCloseButton();
 };
 
-let formSubmitHandler = (evt) => {
+let handleSubmitForm = (evt) => {
   evt.preventDefault(evt);
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
-  closePopup();
+  handleCloseButton();
 };
 
-let openPopup = (popupName) => {
+let handleOpenButton = (popupName) => {
   popupName.classList.add('popup_opened');
 };
 
-let closePopup = () => {
-  for (let i = 0; i < popups.length; i++) {
-    popups[i].classList.remove('popup_opened');
-  };
+let handleCloseButton = (evt) => {
+  evt.currentTarget.parentNode.classList.remove('popup_opened');
 };
 
-let addLike = (clickLike) => {
-  clickLike.classList.toggle('element__like_active');
+let handleLikeButton = (evt) => {
+  evt.currentTarget.classList.toggle('element__like_active');
 };
 
-let deletePlace = (deleteElement) => {
+let handleDeleteButton = (deleteElement) => {
   deleteElement.remove();
 };
 
-for (let i = 0; i < popups.length; i++) {
-  buttonsClose[i].addEventListener('click', closePopup);
-};
 
-for (let i = 0; i < buttonsLike.length; i++) {
-  buttonsLike[i].addEventListener('click', () => addLike( buttonsLike[i]));
-};
+// not delete
+// let click = (evt) => {
+//   evt.target.classList.toggle('element__like_active');
+//   console.log(evt.target.classList)
+// };
 
-for (let i = 0; i < elements.length; i++) {
-  buttonsDeletePlace[i].addEventListener('click', () => deletePlace(elements[i]));
-};
+// document.querySelector('.element__like').addEventListener('click', handleLikeButton);
+
+
+// for (let i = 0; i < popups.length; i++) {
+//   buttonsClose[i].addEventListener('click', handleCloseButton);
+// };
+
+// for (let i = 0; i < buttonsLike.length; i++) {
+//   buttonsLike[i].addEventListener('click', () => handleLikeButton( buttonsLike[i]));
+// };
+
+// for (let i = 0; i < elements.length; i++) {
+//   buttonsDeletePlace[i].addEventListener('click', () => handleDeleteButton(elements[i]));
+// };
 
 for (i = 0; i < images.length; i++) {
   images[i].addEventListener('click', (evt) => {
-    openPopup(popup_image);
+    handleOpenButton(popupImage);
     elementImage.src = evt.target.src;
     elementImage.alt = evt.target.alt;
     elementDescription.textContent = evt.target.alt;
   });
 }
 
-for (let i = 0; i < popups.length; i++) {
-  popups[i].addEventListener('click', (event) => {
-    event.target === event.currentTarget ?
-      closePopup() : false;
-  });
-};
+// for (let i = 0; i < popups.length; i++) {
+//   popups[i].addEventListener('click', (event) => {
+//     event.target === event.currentTarget
+//     handleCloseButton()
+//   });
+// };
 
-formProfile.addEventListener('submit', formSubmitHandler);
+formProfile.addEventListener('submit', handleSubmitForm);
 formPlace.addEventListener('submit', addCard);
-buttonAdd.addEventListener('click', () => openPopup(popup_element));
+buttonAdd.addEventListener('click', () => handleOpenButton(popupPlace));
 buttonEdit.addEventListener('click', () => {
-  openPopup(popup_profile)
+  handleOpenButton(popupProfile)
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 });
