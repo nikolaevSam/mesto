@@ -2,117 +2,81 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mesto Russia</title>
-    <link rel="stylesheet" href="./pages/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto Russia</title>
+  <link rel="stylesheet" href="./pages/index.css">
+  <script async src="./scripts/cards.js"></script>
+  <script async src="./scripts/script.js"></script>
 </head>
 
 <body class="page">
-    <header class="header">
-        <img src="./images/header__logo.svg" alt="логотип Mesto Russia" class="header__logo">
-    </header>
+  <header class="header">
+    <img src="./images/header__logo.svg" alt="логотип Mesto Russia" class="header__logo">
+  </header>
 
-    <main>
-        <section class="profile">
-            <div class="profile-info">
-                <img src="./images/profile-info__avatar.jpg" alt="аватар" class="profile-info__avatar">
-                <h1 class="profile-info__title">Жак-Ив Кусто</h1>
-                <button class="profile-info__edit" aria-label="редактирование профиля" type="button"></button>
-                <p class="profile-info__subtitle">Исследователь океана</p>
-            </div>
-            <button class="profile__add" aria-label="добавить место" type="button"></button>
-        </section>
-
-        <section class="elements">
-            <article class="element">
-                <button class="element__delete" aria-label="удалить место" type="button"></button>
-                <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Карачаевск" class="element__image">
-                <h2 class="element__text">Карачаевск</h2>
-                <button class="element__like element__like_active" aria-label="мне нравится / не нравится" type="button"></button>
-            </article>
-
-            <article class="element">
-                <button class="element__delete" aria-label="удалить место" type="button"></button>
-                <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
-                <h2 class="element__text">Гора Эльбрус</h2>
-                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
-            </article>
-
-            <article class="element">
-                <button class="element__delete" aria-label="удалить место" type="button"></button>
-                <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
-                <h2 class="element__text">Домбай</h2>
-                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
-            </article>
-
-            <article class="element">
-                <button class="element__delete" aria-label="удалить место" type="button"></button>
-                <img src="./images/kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус" class="element__image">
-                <h2 class="element__text">Гора Эльбрус</h2>
-                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
-            </article>
-
-            <article class="element">
-                <button class="element__delete" aria-label="удалить место" type="button"></button>
-                <img src="./images/kirill-pershin-1556355-unsplash.png" alt="Домбай" class="element__image">
-                <h2 class="element__text">Домбай</h2>
-                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
-            </article>
-
-            <article class="element">
-                <button class="element__delete" aria-label="удалить место" type="button"></button>
-                <img src="./images/kirill-pershin-1088404-unsplash.png" alt="Карачаево-Черкесская республика"
-                    class="element__image">
-                <h2 class="element__text">Карачаево-Черкесская республика</h2>
-                <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
-            </article>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
-    </footer>
-
-    <div class="popup" id="popup_profile">
-      <button class="popup__close" aria-label="закрыть popup" type="button"></button>
-      <div class="popup__container">
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="form" name="form">
-          <input type="text" placeholder="Имя Фамили" name="dataname" class="form__input form__input_data_name" required>
-          <input type="text" placeholder="Работа" name="datajob" class="form__input form__input_data_job" required>
-          <button type="submit" class="form__submit">Сохранить</button>
-        </form>
+  <main>
+    <section class="profile">
+      <div class="profile-info">
+        <img src="./images/profile-info__avatar.jpg" alt="аватар" class="profile-info__avatar">
+        <h1 class="profile-info__title">Жак-Ив Кусто</h1>
+        <button class="profile-info__edit" aria-label="редактирование профиля" type="button"></button>
+        <p class="profile-info__subtitle">Исследователь океана</p>
       </div>
+      <button class="profile__add" aria-label="добавить место" type="button"></button>
+    </section>
+
+    <section class="elements">
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+  </footer>
+
+  <div class="popup" id="popup_profile">
+    <button class="popup__close" aria-label="закрыть popup" type="button"></button>
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="form" name="form">
+        <input type="text" placeholder="Имя Фамили" name="dataname" class="form__input form__input_data_name" required>
+        <input type="text" placeholder="Работа" name="datajob" class="form__input form__input_data_job" required>
+        <button type="submit" class="form__submit">Сохранить</button>
+      </form>
     </div>
+  </div>
 
-    <div class="popup" id="popup_element">
-      <button class="popup__close" aria-label="закрыть popup" type="button"></button>
-      <div class="popup__container">
-        <h2 class="popup__title">Новое место</h2>
-        <form class="form" name="form">
-          <input type="text" placeholder="Название" name="dataplace" class="form__input form__input_data_place" required>
-          <input type="text" placeholder="Ссылка на картинку" name="dataurl" class="form__input form__input_data_url"
-            required>
-          <button type="submit" class="form__submit">Создать</button>
-        </form>
-      </div>
+  <div class="popup" id="popup_element">
+    <button class="popup__close" aria-label="закрыть popup" type="button"></button>
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <form class="form" name="form">
+        <input type="text" placeholder="Название" name="dataplace" class="form__input form__input_data_place" required>
+        <input type="text" placeholder="Ссылка на картинку" name="dataurl" class="form__input form__input_data_url"
+          required>
+        <button type="submit" class="form__submit" id="form_element">Создать</button>
+      </form>
     </div>
+  </div>
 
-    <!-- <div class="popup" id="popup-image">
-      <button class="popup__close" aria-label="закрыть popup" type="button"></button>
-      <div class="popup__container">
-        <form class="form" name="form">
-          <input type="text" placeholder="Название" name="dataplace" class="form__input form__input_data_place" required>
-          <input type="text" placeholder="Ссылка на картинку" name="dataurl" class="form__input form__input_data_url"
-            required>
-          <button type="submit" class="form__submit">Создать</button>
-        </form>
-      </div>
-    </div> -->
+  <div class="popup popup_zoom" id="popup_image">
+    <div class="popup__zoom-container">
+      <button class="popup__close popup__close_zoom" aria-label="закрыть popup" type="button"></button>
+      <img src="#" alt="" class="popup__image">
+      <p class="popup__description"></p>
+    </div>
+  </div>
 
-    <script src="./scripts/script.js"></script>
+  <template id="element-template">
+    <article class="element">
+      <button class="element__delete" aria-label="удалить место" type="button"></button>
+      <img src="#" alt="#" class="element__image">
+      <h2 class="element__text"></h2>
+      <button class="element__like" aria-label="мне нравится / не нравится" type="button"></button>
+    </article>
+  </template>
 </body>
 
 </html>
