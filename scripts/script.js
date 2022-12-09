@@ -75,7 +75,7 @@ let handleZoomImage = (evt) => {
 document.addEventListener('click', (evt) => {
   if (evt.target.classList.contains('popup__close')) {
     evt.target.closest('.popup').classList.remove('popup_opened');
-  }
+  };
 });
 document.addEventListener('click', handleZoomImage);
 document.addEventListener('click', handleLikeButton);
