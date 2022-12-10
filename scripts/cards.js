@@ -1,4 +1,4 @@
-const elementContainer = document.querySelector('.elements');
+// const elementContainer = document.querySelector('.elements');
 const initialCards = [
   {
     name: 'Архыз',
@@ -26,14 +26,28 @@ const initialCards = [
   }
 ];
 
-let addCards = () => {
-  const elementTemplate = document.querySelector('#element-template').content;
-  for (let i = 0; i < initialCards.length; i++) {
-    let element = elementTemplate.querySelector('.element').cloneNode(true);
-    element.querySelector('.element__text').textContent = initialCards[i].name;
-    element.querySelector('.element__image').src = initialCards[i].link;
-    element.querySelector('.element__image').alt = initialCards[i].name;
-    elementContainer.append(element);
-  };
-};
-addCards();
+// let addCards = () => {
+//   const elementTemplate = document.querySelector('#element-template').content;
+//   for (let i = 0; i < initialCards.length; i++) {
+//     let element = elementTemplate.querySelector('.element').cloneNode(true);
+//     element.querySelector('.element__text').textContent = initialCards[i].name;
+//     element.querySelector('.element__image').src = initialCards[i].link;
+//     element.querySelector('.element__image').alt = initialCards[i].name;
+//     elementContainer.append(element);
+//   };
+// };
+// addCards();
+
+// let createCard = () => {
+//   evt.preventDefault(evt);
+//   const elementTemplate = document.querySelector('#element-template').content;
+//   const element = elementTemplate.querySelector('.element').cloneNode(true);
+//   const elementText = element.querySelector('.element__text');
+//   const elementImage = element.querySelector('.element__image');
+//   elementText.textContent = description;
+//   elementImage.src = url;
+//   elementImage.alt = description;
+//   elementContainer.prepend(element);
+//   handleCloseButton(popupPlace);
+//   return element;
+// };
