@@ -27,30 +27,36 @@ const createCard = (url, description) => {
   return element;
 };
 
-const renderCard = (evt) => {
-  elementContainer.prepend(createCard(inputUrl, inputPlace));
+const renderCard = (url, description) => {
+  elementContainer.prepend(createCard(url, description));
 };
+
+initialCards.forEach((item) => {
+  elementContainer.append(createCard(item.link, item.name));
+})
 
 const addCard = (evt) => {
   evt.preventDefault();
-  const taskName = input.value;
-  renderTodo(taskName)
+  const url = inputUrl.value;
+  const description = inputPlace.value;
+  renderCard(url, description);
   inputUrl.value = '';
-  inputPlace
+  inputPlace.value = '';
+  handleClosePopup(popupPlace);
 };
 
 const handleSubmitForm = (evt) => {
   evt.preventDefault(evt);
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
-  handleCloseButton(popupProfile);
+  handleClosePopup(popupProfile);
 };
 
-const handleOpenButton = (popupName) => {
+const handleOpenPopup = (popupName) => {
   popupName.classList.add('popup_opened');
 };
 
-const handleCloseButton = (popupName) => {
+const handleClosePopup = (popupName) => {
   popupName.classList.remove('popup_opened');
 };
 
@@ -62,10 +68,9 @@ const handleLikeButton = (evt) => {
 };
 
 const handleDeleteButton = (evt) => {
-  const element = evt.target.parentNode;
+  const element = evt.target.closest('.element');
   const elementDelete = evt.target;
-  if (element.classList.contains('element') &&
-    elementDelete.classList.contains('element__delete')) {
+  if (elementDelete.classList.contains('element__delete')) {
     element.remove();
   };
 };
@@ -75,7 +80,7 @@ const handleZoomImage = (evt) => {
     elementImage.src = evt.target.src;
     elementImage.alt = evt.target.alt;
     elementDescription.textContent = evt.target.alt;
-    handleOpenButton(popupImage);
+    handleOpenPopup(popupImage);
   };
 };
 
@@ -87,10 +92,11 @@ document.addEventListener('click', (evt) => {
 document.addEventListener('click', handleZoomImage);
 document.addEventListener('click', handleLikeButton);
 document.addEventListener('click', handleDeleteButton);
+formPlace.addEventListener('submit', addCard);
 formProfile.addEventListener('submit', handleSubmitForm);
-buttonAdd.addEventListener('click', () => handleOpenButton(popupPlace));
+buttonAdd.addEventListener('click', () => handleOpenPopup(popupPlace));
 buttonEdit.addEventListener('click', () => {
-  handleOpenButton(popupProfile)
+  handleOpenPopup(popupProfile)
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 });
