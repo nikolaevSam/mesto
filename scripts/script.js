@@ -12,7 +12,6 @@ const nameInput = formProfile.querySelector('.form__input_data_name');
 const jobInput = formProfile.querySelector('.form__input_data_job');
 const nameProfile = document.querySelector('.profile-info__title');
 const jobProfile = document.querySelector('.profile-info__subtitle');
-const popups = document.querySelectorAll('.popup');
 const elementImage = popupImage.querySelector('.popup__image');
 const elementDescription = popupImage.querySelector('.popup__description')
 
@@ -100,3 +99,5 @@ buttonEdit.addEventListener('click', () => {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 });
+
+// Сергей, спасибо за комментарии!
