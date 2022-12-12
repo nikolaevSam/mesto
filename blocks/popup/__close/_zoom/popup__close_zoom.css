@@ -8,6 +8,6 @@
   .popup__close_zoom {
     margin: 0 0 16px 0;
     position: relative;
-    left: 92%;
+    left: 100%;
   }
 }

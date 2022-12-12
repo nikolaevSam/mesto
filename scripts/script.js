@@ -1,3 +1,4 @@
+const elementTemplate = document.querySelector('#element-template').content;
 const buttonAdd = document.querySelector('.profile__add');
 const buttonEdit = document.querySelector('.profile-info__edit');
 const popupPlace = document.querySelector('.popup_element');
@@ -14,27 +15,35 @@ const nameProfile = document.querySelector('.profile-info__title');
 const jobProfile = document.querySelector('.profile-info__subtitle');
 const elementImage = popupImage.querySelector('.popup__image');
 const elementDescription = popupImage.querySelector('.popup__description')
+const buttonCloseList = document.querySelectorAll('.popup__close');
 
-const createCard = (url, description) => {
-  const elementTemplate = document.querySelector('#element-template').content;
+function createCard(url, description) {
   const element = elementTemplate.querySelector('.element').cloneNode(true);
   const elementText = element.querySelector('.element__text');
   const elementImage = element.querySelector('.element__image');
+  const elementLike = element.querySelector('.element__like');
+  const elementDelete = element.querySelector('.element__delete');
   elementText.textContent = description;
   elementImage.src = url;
   elementImage.alt = description;
+  elementLike.addEventListener('click', handleLikeButton);
+  elementDelete.addEventListener('click', (evt) => {
+    const element = evt.target.closest('.element');
+    handleDeleteButton(element);
+  });
+  elementImage.addEventListener('click', () => handleZoomImage(url, description));
   return element;
 };
 
-const renderCard = (url, description) => {
+function renderCard(url, description) {
   elementContainer.prepend(createCard(url, description));
 };
 
 initialCards.forEach((item) => {
   elementContainer.append(createCard(item.link, item.name));
-})
+});
 
-const addCard = (evt) => {
+function addCard(evt) {
   evt.preventDefault();
   const url = inputUrl.value;
   const description = inputPlace.value;
@@ -44,60 +53,46 @@ const addCard = (evt) => {
   handleClosePopup(popupPlace);
 };
 
-const handleSubmitForm = (evt) => {
+function handleSubmitForm(evt) {
   evt.preventDefault(evt);
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
   handleClosePopup(popupProfile);
 };
 
-const handleOpenPopup = (popupName) => {
+function handleOpenPopup(popupName) {
   popupName.classList.add('popup_opened');
 };
 
-const handleClosePopup = (popupName) => {
+function handleClosePopup(popupName) {
   popupName.classList.remove('popup_opened');
 };
 
-const handleLikeButton = (evt) => {
-  const likeButton = evt.target;
-  if (likeButton.classList.contains('element__like')) {
-    likeButton.classList.toggle('element__like_active');
-  };
+function handleZoomImage(url, description) {
+  elementImage.src = url;
+  elementImage.alt = description;
+  elementDescription.textContent = description;
+  handleOpenPopup(popupImage);
 };
 
-const handleDeleteButton = (evt) => {
-  const element = evt.target.closest('.element');
-  const elementDelete = evt.target;
-  if (elementDelete.classList.contains('element__delete')) {
-    element.remove();
-  };
+function handleLikeButton(evt) {
+  evt.target.classList.toggle('element__like_active');
 };
 
-const handleZoomImage = (evt) => {
-  if (evt.target.classList.contains('element__image')) {
-    elementImage.src = evt.target.src;
-    elementImage.alt = evt.target.alt;
-    elementDescription.textContent = evt.target.alt;
-    handleOpenPopup(popupImage);
-  };
+function handleDeleteButton(element) {
+  element.remove();
 };
 
-document.addEventListener('click', (evt) => {
-  if (evt.target.classList.contains('popup__close')) {
-    evt.target.closest('.popup').classList.remove('popup_opened');
-  };
+buttonCloseList.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => handleClosePopup(popup));
 });
-document.addEventListener('click', handleZoomImage);
-document.addEventListener('click', handleLikeButton);
-document.addEventListener('click', handleDeleteButton);
 formPlace.addEventListener('submit', addCard);
 formProfile.addEventListener('submit', handleSubmitForm);
 buttonAdd.addEventListener('click', () => handleOpenPopup(popupPlace));
 buttonEdit.addEventListener('click', () => {
-  handleOpenPopup(popupProfile)
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
+  handleOpenPopup(popupProfile)
 });
 
-// Сергей, спасибо за комментарии!
