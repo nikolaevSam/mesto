@@ -4,10 +4,9 @@
   left: 100%;
 }
 
-@media screen and (min-width: 320px) and (max-width: 980px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .popup__close_zoom {
     margin: 0 0 16px 0;
-    position: relative;
-    left: 100%;
+    left: calc(100% - 20px);
   }
 }

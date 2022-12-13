@@ -26,11 +26,8 @@ function createCard(url, description) {
   elementText.textContent = description;
   elementImage.src = url;
   elementImage.alt = description;
-  elementLike.addEventListener('click', handleLikeButton);
-  elementDelete.addEventListener('click', (evt) => {
-    const element = evt.target.closest('.element');
-    handleDeleteButton(element);
-  });
+  elementLike.addEventListener('click', () => handleLikeButton(elementLike));
+  elementDelete.addEventListener('click', () => handleDeleteButton(element));
   elementImage.addEventListener('click', () => handleZoomImage(url, description));
   return element;
 };
@@ -75,8 +72,8 @@ function handleZoomImage(url, description) {
   handleOpenPopup(popupImage);
 };
 
-function handleLikeButton(evt) {
-  evt.target.classList.toggle('element__like_active');
+function handleLikeButton(buttonLike) {
+  buttonLike.classList.toggle('element__like_active');
 };
 
 function handleDeleteButton(element) {
@@ -96,3 +93,4 @@ buttonEdit.addEventListener('click', () => {
   handleOpenPopup(popupProfile)
 });
 
+// Сергей, спасибо за помощь в сдаче проектной работы!!! Надеюсь на этот раз все:)
