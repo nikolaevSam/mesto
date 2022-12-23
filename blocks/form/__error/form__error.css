@@ -1,0 +1,7 @@
+.form__error {
+    display: none;
+}
+
+.form__error_visible {
+  display: flex;
+}

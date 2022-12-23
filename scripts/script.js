@@ -92,5 +92,3 @@ buttonEdit.addEventListener('click', () => {
   jobInput.value = jobProfile.textContent;
   handleOpenPopup(popupProfile)
 });
-
-// Сергей, спасибо за помощь в сдаче проектной работы!!! Надеюсь на этот раз все:)
