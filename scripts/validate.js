@@ -1,5 +1,5 @@
 function checkInputValidity(form, input, config) {
-    const error = form.querySelector(`.form__${input.id}-error`);
+    const error = form.querySelector(`.form__${input.id}_error`);
     if (!input.validity.valid) {
         input.classList.add(config.inputErrorClass);
         error.classList.add(config.errorClass);
