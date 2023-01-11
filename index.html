@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto Russia</title>
   <link rel="stylesheet" href="./pages/index.css">
-  <script async src="./scripts/cards.js"></script>
+  <script async src="./scripts/constans.js"></script>
   <script async src="./scripts/script.js"></script>
   <script async src="./scripts/validate.js"></script>
 </head>
@@ -37,15 +37,20 @@
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
 
-  <div class="popup popup_opened popup_profile">
+  <div class="popup popup_profile">
     <button class="popup__close" aria-label="закрыть popup" type="button"></button>
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="form" name="form">
-        <input id="input_name" class="form__input form__input_data_name form__input_type_error" type="text" placeholder="Имя Фамилия" name="dataname" minlength="2" maxlength="40" required>
-        <span class="form__input_name-error form__error form__error_visible">Error</span> <!-- for PrWrk №6 -->
-        <input id="input_job" class="form__input form__input_data_job" type="text" placeholder="Работа" name="datajob" minlength="2" maxlength="200" required>
-        <span class="form__input_job-error form__error"></span> <!-- for PrWrk №6 -->
+      <form class="form" name="form" novalidate>
+        <label class="form__label">
+          <input id="input_name" class="form__input form__input_data_name" type="text" placeholder="Имя Фамилия" name="dataname" minlength="2" maxlength="40" required>
+          <span class="form__input_name-error form__error"></span>
+        </label>
+        <label class="form__label">
+          <input id="input_job" class="form__input form__input_data_job" type="text" placeholder="Работа" name="datajob"
+            minlength="2" maxlength="200" required>
+          <span class="form__input_job-error form__error"></span>
+        </label>
         <button type="submit" class="form__button">Сохранить</button>
       </form>
     </div>
@@ -55,11 +60,16 @@
     <button class="popup__close" aria-label="закрыть popup" type="button"></button>
     <div class="popup__container">
       <h2 class="popup__title">Новое место</h2>
-      <form class="form" name="form">
-        <input id="form__input_place" class="form__input form__input_data_place" type="text" placeholder="Название" name="dataplace" minlength="2" maxlength="30" required>
-        <span class="form__input_place_error form__error"></span> <!-- for PrWrk №6 -->
-        <input id="form__input_url" class="form__input form__input_data_url" type="url" placeholder="Ссылка на картинку" name="dataurl" required>
-        <span class="form__input_place_error form__error"></span> <!-- for PrWrk №6 -->
+      <form class="form" name="form" novalidate>
+        <label class="form__label">
+          <input id="input_place" class="form__input form__input_data_place" type="text" placeholder="Название" name="dataplace" minlength="2" maxlength="30" required>
+          <span class="form__input_place-error form__error"></span>
+        </label>
+        <label class="form__label">
+          <input id="input_url" class="form__input form__input_data_url" type="url"
+            placeholder="Ссылка на картинку" name="dataurl" required>
+          <span class="form__input_url-error form__error"></span>
+        </label>
         <button type="submit" class="form__button">Создать</button>
       </form>
     </div>

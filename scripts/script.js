@@ -15,7 +15,8 @@ const nameProfile = document.querySelector('.profile-info__title');
 const jobProfile = document.querySelector('.profile-info__subtitle');
 const elementImage = popupImage.querySelector('.popup__image');
 const elementDescription = popupImage.querySelector('.popup__description')
-const buttonCloseList = document.querySelectorAll('.popup__close');
+const buttonCloseList = Array.from(document.querySelectorAll('.popup__close'));
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
 function createCard(url, description) {
   const element = elementTemplate.querySelector('.element').cloneNode(true);
@@ -48,6 +49,7 @@ function addCard(evt) {
   inputUrl.value = '';
   inputPlace.value = '';
   handleClosePopup(popupPlace);
+  formPlace.reset();
 };
 
 function handleSubmitForm(evt) {
@@ -59,6 +61,7 @@ function handleSubmitForm(evt) {
 
 function handleOpenPopup(popupName) {
   popupName.classList.add('popup_opened');
+  document.addEventListener('keydown', escapeHandler);
 };
 
 function handleClosePopup(popupName) {
@@ -80,15 +83,32 @@ function handleDeleteButton(element) {
   element.remove();
 };
 
+function escapeHandler(evt) {
+  if (evt.key === 'Escape') {
+    const popup = document.querySelector('.popup_opened');
+    handleClosePopup(popup);
+  };
+};
+
 buttonCloseList.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => handleClosePopup(popup));
 });
-formPlace.addEventListener('submit', addCard);
+formPlace.addEventListener('submit', () => {
+  addCard();
+  formPlace.reset();
+});
 formProfile.addEventListener('submit', handleSubmitForm);
 buttonAdd.addEventListener('click', () => handleOpenPopup(popupPlace));
 buttonEdit.addEventListener('click', () => {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
-  handleOpenPopup(popupProfile)
+  handleOpenPopup(popupProfile);
+});
+popupList.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+    if (evt.target === evt.currentTarget) {
+      handleClosePopup(popup);
+    };
+  });
 });
