@@ -49,11 +49,10 @@ function addCard(evt) {
   inputUrl.value = '';
   inputPlace.value = '';
   handleClosePopup(popupPlace);
-  formPlace.reset();
 };
 
 function handleSubmitForm(evt) {
-  evt.preventDefault(evt);
+  evt.preventDefault();
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
   handleClosePopup(popupProfile);
@@ -94,10 +93,7 @@ buttonCloseList.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => handleClosePopup(popup));
 });
-formPlace.addEventListener('submit', () => {
-  addCard();
-  formPlace.reset();
-});
+formPlace.addEventListener('submit', addCard);
 formProfile.addEventListener('submit', handleSubmitForm);
 buttonAdd.addEventListener('click', () => handleOpenPopup(popupPlace));
 buttonEdit.addEventListener('click', () => {
